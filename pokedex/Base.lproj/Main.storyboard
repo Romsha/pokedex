@@ -5,10 +5,12 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
             <string>AvenirNext-Regular</string>
         </array>
         <array key="Pokemon.ttf">
@@ -38,7 +40,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtr-75-8iG">
-                                        <rect key="frame" x="337" y="27" width="30" height="30"/>
+                                        <rect key="frame" x="335" y="25" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="hqo-zC-47c"/>
                                             <constraint firstAttribute="width" constant="30" id="nII-ZY-HbU"/>
@@ -52,9 +54,9 @@
                                 <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="o92-57-4cX" secondAttribute="bottom" id="2Q5-em-U5g"/>
-                                    <constraint firstAttribute="bottom" secondItem="Xtr-75-8iG" secondAttribute="bottom" constant="8" id="3Y3-ip-O19"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xtr-75-8iG" secondAttribute="bottom" constant="10" id="3Y3-ip-O19"/>
                                     <constraint firstAttribute="trailing" secondItem="o92-57-4cX" secondAttribute="trailing" id="4vA-Hn-xvC"/>
-                                    <constraint firstAttribute="trailing" secondItem="Xtr-75-8iG" secondAttribute="trailing" constant="8" id="BqH-YV-bw8"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xtr-75-8iG" secondAttribute="trailing" constant="10" id="BqH-YV-bw8"/>
                                     <constraint firstItem="o92-57-4cX" firstAttribute="top" secondItem="hvr-gZ-aJu" secondAttribute="top" constant="20" id="Fg5-al-0Gm"/>
                                     <constraint firstItem="o92-57-4cX" firstAttribute="leading" secondItem="hvr-gZ-aJu" secondAttribute="leading" id="Qfs-HU-dxi"/>
                                     <constraint firstAttribute="height" constant="65" id="cvp-9B-VvO"/>
@@ -142,15 +144,98 @@
                     <connections>
                         <outlet property="collection" destination="dLz-ad-DO0" id="Jo7-sw-ygj"/>
                         <outlet property="searchBar" destination="IXP-NO-skk" id="yWr-to-pkU"/>
+                        <segue destination="Spm-ag-wrD" kind="show" identifier="PokemonDetailVC" id="dDv-BN-rNE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
+        <!--Pokemon DetailVC-->
+        <scene sceneID="JTm-Ge-8Dh">
+            <objects>
+                <viewController id="Spm-ag-wrD" customClass="PokemonDetailVC" customModule="pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TKr-RA-HBh"/>
+                        <viewControllerLayoutGuide type="bottom" id="YlM-Ca-uPd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hsd-IY-GdB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-lf-cq8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8T-5z-1cS">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="45"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYR-Ax-xd7">
+                                        <rect key="frame" x="10" y="25" width="35" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="ggw-va-VTd"/>
+                                            <constraint firstAttribute="width" constant="35" id="oIH-Xg-ZRV"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="back"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="j8T-5z-1cS" firstAttribute="leading" secondItem="lAf-lf-cq8" secondAttribute="leading" id="1ES-Wi-UwC"/>
+                                    <constraint firstItem="gYR-Ax-xd7" firstAttribute="leading" secondItem="lAf-lf-cq8" secondAttribute="leading" constant="10" id="2nS-Eh-wzg"/>
+                                    <constraint firstItem="j8T-5z-1cS" firstAttribute="top" secondItem="lAf-lf-cq8" secondAttribute="top" constant="20" id="E06-tb-sUh"/>
+                                    <constraint firstAttribute="bottom" secondItem="gYR-Ax-xd7" secondAttribute="bottom" constant="15" id="X2C-sQ-ClT"/>
+                                    <constraint firstAttribute="trailing" secondItem="j8T-5z-1cS" secondAttribute="trailing" id="bJ5-ul-jxc"/>
+                                    <constraint firstAttribute="bottom" secondItem="j8T-5z-1cS" secondAttribute="bottom" id="hWx-Iw-s5V"/>
+                                    <constraint firstAttribute="height" constant="65" id="lzb-5Z-iSj"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o32-N6-mqk">
+                                <rect key="frame" x="16" y="75" width="343" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="leZ-n2-a8p"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Moves"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="aEk-45-U67">
+                                <rect key="frame" x="16" y="115" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="26a-BQ-MX4"/>
+                                    <constraint firstAttribute="width" constant="125" id="zU0-ve-HpJ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aEk-45-U67" firstAttribute="top" secondItem="o32-N6-mqk" secondAttribute="bottom" constant="10" id="2Qh-P1-3A9"/>
+                            <constraint firstItem="lAf-lf-cq8" firstAttribute="top" secondItem="hsd-IY-GdB" secondAttribute="top" id="DnF-6M-3ao"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o32-N6-mqk" secondAttribute="trailing" id="EG6-ji-3XT"/>
+                            <constraint firstItem="o32-N6-mqk" firstAttribute="leading" secondItem="hsd-IY-GdB" secondAttribute="leadingMargin" id="ZAy-2E-2pr"/>
+                            <constraint firstAttribute="trailing" secondItem="lAf-lf-cq8" secondAttribute="trailing" id="ahd-FM-MlM"/>
+                            <constraint firstItem="o32-N6-mqk" firstAttribute="top" secondItem="lAf-lf-cq8" secondAttribute="bottom" constant="10" id="b66-O2-ydE"/>
+                            <constraint firstItem="lAf-lf-cq8" firstAttribute="leading" secondItem="hsd-IY-GdB" secondAttribute="leading" id="gLB-1f-Emj"/>
+                            <constraint firstItem="aEk-45-U67" firstAttribute="leading" secondItem="hsd-IY-GdB" secondAttribute="leadingMargin" id="vd2-JT-j06"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLbl" destination="j8T-5z-1cS" id="BC4-Rx-hTg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i5b-wP-Yq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885.60000000000002" y="136.28185907046478"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="2" width="120" height="120"/>
         <image name="4" width="120" height="120"/>
+        <image name="back" width="100" height="67"/>
         <image name="bg" width="1920" height="1200"/>
         <image name="music" width="100" height="100"/>
     </resources>
