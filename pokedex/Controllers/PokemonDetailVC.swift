@@ -25,15 +25,38 @@ class PokemonDetailVC: UIViewController {
     @IBOutlet weak var currentEvoImg: UIImageView!
     @IBOutlet weak var nextEvoImg: UIImageView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         nameLbl.text = pokemon.name
+        idLbl.text = "\(pokemon.id)"
+        mainImg.image = UIImage(imageLiteralResourceName: "\(pokemon.id)")
+        currentEvoImg.image = UIImage(imageLiteralResourceName: "\(pokemon.id)")
+        
+        pokemon.downloadPokemonDetails {
+            // called only after the download completes!
+            self.updateUI()
+        }
     }
     
-    
+    func updateUI() {
+        
+        attackLbl.text = pokemon.attack
+        defenseLbl.text = pokemon.defense
+        heightLbl.text = pokemon.height
+        weightLbl.text = pokemon.weigth
+        typeLbl.text = pokemon.type
+        evoLbl.text = pokemon.nextEvoText
+        if pokemon.nextEvoID != 0 {
+            nextEvoImg.isHidden = false
+            nextEvoImg.image =
+                UIImage(imageLiteralResourceName: "\(pokemon.nextEvoID)")
+        } else {
+            nextEvoImg.isHidden = true
+        }
+        descriptionLbl.text = pokemon.description
+        
+    }
 
     @IBAction func backBtnPressed(_ sender: UIButton) {
         
