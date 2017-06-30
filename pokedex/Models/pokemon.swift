@@ -90,7 +90,6 @@ class Pokemon {
                     
                     if !evoFound {
                         self._nextEvoID = 0
-                        self._nextEvoText = "No Further Evolutions"
                     }
                     
                 }
@@ -107,7 +106,6 @@ class Pokemon {
                                 if let description = descDict["description"] as? String {
                                     let newDesc = description.replacingOccurrences(of: "POKMON", with: "pokemon")
                                     self._description = newDesc
-                                    print(newDesc)
                                 }
                                 
                             }
@@ -121,9 +119,7 @@ class Pokemon {
                 }
                 
             }
-            
-            completed()
-            
+                    
         }
         
         

@@ -51,8 +51,10 @@ class PokemonDetailVC: UIViewController {
             nextEvoImg.isHidden = false
             nextEvoImg.image =
                 UIImage(imageLiteralResourceName: "\(pokemon.nextEvoID)")
+            evoLbl.text = pokemon.nextEvoText
         } else {
             nextEvoImg.isHidden = true
+            evoLbl.text = "No Further Evolutions"
         }
         descriptionLbl.text = pokemon.description
         
